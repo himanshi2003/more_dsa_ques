@@ -1,5 +1,6 @@
-#include <bits/stdc++.h> 
-long long int binarySearch(int n){
+#include<iostream>
+using namespace std;
+long long int sqrtInt(int n){
         int s=0; 
         int e=n;
         long long int mid=s+(e-s)/2;
@@ -21,8 +22,27 @@ long long int binarySearch(int n){
       return ans;
 
     }
-int sqrtN(long long int N)
-{
-    // Write your code here.
-    return binarySearch(N);
+
+    double moreprec(int n,int prec,int temsol){
+        double factor=1;
+        double ans=temsol;
+        for (int i = 0; i < prec  ; i++)
+        {
+            factor =factor/10;
+            for (double j = ans; j*j < n; j=j+factor)
+            {
+                ans=j;
+            }
+            
+        }
+        return ans;
+
+    }
+int main(){
+int n;
+cout<<"enter the number"<<endl;
+cin>>n;
+int temsol=sqrtInt(n);
+cout<<"ans is" << moreprec(n,3,temsol);
+    return 0;
 }
