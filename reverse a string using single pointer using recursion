@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+void reverse(string& str,int i){
+    //base case
+    if(i>str.length()-i-1){
+        return;
+    }
+    swap(str[i],str[str.length()-i-1]);
+    i++;
+   
+    //recursive function
+    reverse(str,i);
+}
+int main()
+{
+string name="himanshi";
+    reverse(name,0);
+    cout<<name<<endl;
+      return 0;
+}
